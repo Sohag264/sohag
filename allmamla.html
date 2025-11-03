@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সকল মামলার সার্চ তালিকা</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Sohag Kit 2.0</h1>
+        <p>দীর্ঘসূত্রিতা ও আলস্যকে প্রশ্রয় দেবেন না। যখন যা করা প্রয়োজন, তখনই তা করুন।</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h2 class="mb-4">সার্চ করুন এখানে</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search for items...">
+        </div>
+        <ul class="list-group" id="itemList">
+            <li class="list-group-item"><a href="theftcase.html" class="text-dark">চুরি সংক্রান্ত মামলা</a></li>
+            <li class="list-group-item"><a href="dossota.html" class="text-dark">দস্যুতা সংক্রান্ত মামলা</a></li>
+            <li class="list-group-item"><a href="protarona.html" class="text-dark">প্রতারনা সংক্রান্ত মামলা</a></li>
+            <li class="list-group-item"><a href="maramari.html" class="text-dark">মারামারি সংক্রান্ত মামলা</a></li>
+            <li class="list-group-item"><a href="CRmamla.html" class="text-dark">সিআর মামলা</a></li>
+            <li class="list-group-item"><a href="https://example.com/grape" class="text-dark">Grape</a></li>
+            <li class="list-group-item"><a href="https://example.com/honeydew" class="text-dark">Honeydew</a></li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toUpperCase();
+            let items = document.getElementById('itemList').getElementsByTagName('li');
+            
+            Array.from(items).forEach(function(item) {
+                let text = item.textContent || item.innerText;
+                if (text.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
